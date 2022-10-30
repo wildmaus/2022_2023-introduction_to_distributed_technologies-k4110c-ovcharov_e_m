@@ -19,7 +19,7 @@ ___
 kubectl apply -f vault-deployment.yaml
 ``` 
 В результате был скачан образ vault и создан контейнер.    
-![apply results](https://github.com/wildmaus/2022_2023-introduction_to_distributed_technologies-k4110c-ovcharov_e_m/raw/main/lab1/images/apply_res.png)    
+![apply results](./images/apply_res.png)    
 Далее мы создали сервис для нашего пода: 
 ```bash
 kubectl expose pod vault --type=NodePort --port=8200
@@ -40,9 +40,9 @@ ___
 kubectl logs <pod name>
 ```
 В результате получаем:    
-![log command](https://github.com/wildmaus/2022_2023-introduction_to_distributed_technologies-k4110c-ovcharov_e_m/raw/main/lab1/images/log_command.png)    
+![log command](./images/log_command.png)    
 И в самом конце вывода находим необходимые токены:    
-![token in logs](https://github.com/wildmaus/2022_2023-introduction_to_distributed_technologies-k4110c-ovcharov_e_m/raw/main/lab1/images/token.png)    
+![token in logs](./images/token.png)    
 Вставляем найденный токен и мы вошли!    
-![inside vault](https://github.com/wildmaus/2022_2023-introduction_to_distributed_technologies-k4110c-ovcharov_e_m/raw/main/lab1/images/vault.png)
+![inside vault](./images/vault.png)
 ___
