@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: lab3-configmap
+  labels:
+    app: lab3
+data:
+  username: wildmaus
+  company-name: itmo

@@ -35,5 +35,5 @@ minikube service lab2-service
 ![res1](./images/res1.png)    
 ![res2](./images/res2.png)    
 Как видно из скринов выше `REACT_APP_USERNAME` и `REACT_APP_COMPANY_NAME` остаются неизменными, т.к. это переменные переданные из манифеста при создании подов. А вот `Container name` изменяется, т.к. сервис распределяет нагрузку между сущестующими репликами. 
-###  3. Логи контейнеров
+### 3. Логи контейнеров
 ![logs](./images/logs.png)
