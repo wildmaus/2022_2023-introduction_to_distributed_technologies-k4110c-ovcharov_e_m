@@ -3,7 +3,7 @@ kind: IPPool
 metadata:
   name: rack-0-ippool
 spec:
-  cidr: 192.168.0.0/24
+  cidr: 172.16.0.0/26
   ipipMode: Always
   natOutgoing: true
   nodeSelector: rack == "0"
@@ -13,7 +13,7 @@ kind: IPPool
 metadata:
   name: rack-1-ippool
 spec:
-  cidr: 192.168.1.0/24
+  cidr: 192.169.0.0/24
   ipipMode: Always
   natOutgoing: true
   nodeSelector: rack == "1"
