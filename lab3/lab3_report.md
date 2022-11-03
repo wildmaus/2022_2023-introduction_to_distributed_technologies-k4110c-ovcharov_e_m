@@ -56,3 +56,5 @@ kubectl expose deployment web --type=NodePort --port=8080
 ![browser3.png](./images/browser3.png)    
 Проверил описание ingress, все корректно.    
 ![ingress_desc](./images/ingress_desc.png)    
+### 4. Починил
+![ingress_ok](./images/browser4.png)    
