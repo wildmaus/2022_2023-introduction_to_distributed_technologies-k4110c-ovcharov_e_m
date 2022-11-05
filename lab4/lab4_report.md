@@ -20,7 +20,7 @@ minikube start --nodes 2 --cni calico
 Проверка результата - оба узла запущены:    
 ![nodes](./images/nodes.png)    
 ![status](./images/status.png)    
-А вот с calico-nodes возникли пробемы:    
+А вот с calico-nodes возникли проблемы:    
 ![calico_pods](./images/calico_pods.png)
 ![calico_err](./images/calico_err.png)    
 В результате встроенный calico не работает, поэтому было решено использовать способ установки через манифест:
@@ -48,7 +48,7 @@ calicoctl create -f  - < lab4-ippool.yaml
 ```
 ![ippools](./images/ippools.png)    
 ### 3. Deployment
-Аналогично lab2 создадал service типа `LoadBalancer`. `Container name` и `Container IP` изменяются, так как сервис распределяет нагрузку между двумя репликами. При этом по 3ей цифре IP можно понять на реплику какой "стойки" был направлен запрос.    
+Аналогично lab2 создал service типа `LoadBalancer`. `Container name` и `Container IP` изменяются, так как сервис распределяет нагрузку между двумя репликами. При этом по 3ей цифре IP можно понять на реплику какой "стойки" был направлен запрос.    
 ![res1](./images/res1.png)    
 ![res2](./images/res2.png)    
 Заметил на скринах, что что-то не так. IP контейнеров не соответствуют назначенным пулам - проблема в том что calico не работает, долго разбирался как решить. В итоге нашел способ запустить все корректно. Для этого изменил конфигурацию `NetworkManager`, запустил minikube c другой версией kubernetes.

@@ -21,7 +21,7 @@ kubectl apply -f lab2-deployment.yaml
 ### 2. Проверка
 После чего проверим корректность созданных подов и сервиса:
 ```bash
-kubectl descibe service lab2-service
+kubectl describe service lab2-service
 kubectl get pod -o wide
 ```
 Как видно из скрина _Endpoints_ сервиса совпадают с IP созданных подов.    
@@ -34,6 +34,6 @@ minikube service lab2-service
 Зайдем на полученный url:    
 ![res1](./images/res1.png)    
 ![res2](./images/res2.png)    
-Как видно из скринов выше `REACT_APP_USERNAME` и `REACT_APP_COMPANY_NAME` остаются неизменными, т.к. это переменные переданные из манифеста при создании подов. А вот `Container name` изменяется, т.к. сервис распределяет нагрузку между сущестующими репликами. 
+Как видно из скринов выше `REACT_APP_USERNAME` и `REACT_APP_COMPANY_NAME` остаются неизменными, т.к. это переменные переданные из манифеста при создании подов. А вот `Container name` изменяется, т.к. сервис распределяет нагрузку между существующими репликами. 
 ### 3. Логи контейнеров
 ![logs](./images/logs.png)

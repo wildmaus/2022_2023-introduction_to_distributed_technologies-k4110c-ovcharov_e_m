@@ -9,7 +9,7 @@ Date of create: 30.10.2022
 Date of finished: 05.11.2022    
 ___
 ## Схема организации
-В данном случе (в отличии от предыдущих) в схеме дополнительно появляется `Ingress`. Он позволяет обслуживать определенный _domain address_, переправляя все запросы, поступающие на него, на указанные сервисы (может обсуживать сразу несколько, что будет продемонстрированно позже).    
+В данном случе (в отличии от предыдущих) в схеме дополнительно появляется `Ingress`. Он позволяет обслуживать определенный _domain address_, переправляя все запросы, поступающие на него, на указанные сервисы (может обслуживать сразу несколько, что будет продемонстрировано позже).    
 ![scheme](./images/scheme.png)    
 ___
 ## Скриншоты
@@ -20,7 +20,7 @@ kubectl apply -f lab3-configmap.yaml
 kubectl apply -f lab3-replicaset.yaml
 kubectl apply -f lab3-service.yaml
 ```
-После чего сгенерируем TLS серитификат, сохраним его в качестве секрета в k8s и запустим ingress:
+После чего генерируем TLS сертификат, сохраним его в качестве секрета в k8s и запустим ingress:
 ```bash
 openssl req -x509 -newkey rsa:4096 -sha256 -nodes -keyout tls.key -out tls.crt -subj "/CN=wildmaus.com" -days 20
 kubectl create secret tls test-tls --cert=tls.crt --key=tls.key
@@ -52,7 +52,7 @@ kubectl expose deployment web --type=NodePort --port=8080
 ```
 Проверил что все работает:    
 ![hello](./images/hello.png)    
-Добавил сервис в ingress на другой url - /hello. Проверил что все работaет из браузера, исходный контейнер все еще не работает, а вот hello - отлично:    
+Добавил сервис в ingress на другой url - /hello. Проверил что все работает из браузера, исходный контейнер все еще не работает, а вот hello - отлично:    
 ![browser3.png](./images/browser3.png)    
 Проверил описание ingress, все корректно.    
 ![ingress_desc](./images/ingress_desc.png)    
